@@ -1,0 +1,22 @@
+{
+  "name": "car-e-availer",
+  "version": "1.0.0",
+  "description": "A rental availability listing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mindphreak/car-e-availer.git"
+  },
+  "author": "Midhun Satheesan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mindphreak/car-e-availer/issues"
+  },
+  "homepage": "https://github.com/mindphreak/car-e-availer#readme",
+  "devDependencies": {
+    "eslint": "^7.24.0"
+  }
+}
