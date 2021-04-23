@@ -1,14 +1,15 @@
-import { getCarData } from "./dataHandler.js"
+import { getCarData } from "./dataHandler.js";
+import { createLegend } from "./legend.js";
 
 document.addEventListener("readystatechange", (event) => {
-    if (event.target.readyState === "complete") {
-        initializeApp();
-    }
+  if (event.target.readyState === "complete") {
+    initializeApp();
+  }
 })
 
 const initializeApp = () => {
-    getCarData().then( (carsData) => {
-        const legend = document.getElementById("legend");
-        legend.innerHTML = `${carsData[0].VehAvailRSCore.VehRentalCore["@PickUpDateTime"]}`
-    });    
+  getCarData().then((carsData) => {
+    const rentalDetails = carsData[0].VehAvailRSCore.VehRentalCore;
+    createLegend(rentalDetails);
+  });
 }
