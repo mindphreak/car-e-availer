@@ -14,7 +14,7 @@ $font-stack: "Roboto", Arial, sans-serif;
 
 %flex {
   display: flex;
-  align-items: center;
+  align-items: left;
 }
 
 @mixin flexColumn {

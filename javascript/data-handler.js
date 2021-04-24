@@ -23,3 +23,24 @@ const requestData = async (url) => {
     console.error(error);
   }
 }
+
+/**
+ * Generates
+ * @param {*} vehVendorAvails 
+ * @returns 
+ */
+export const generateCarList = (vehVendorAvails) => {
+  let cars = [];
+  vehVendorAvails.forEach(vendor => {
+    let vendorCars = vendor.VehAvails.map(car => {
+      return {
+        ...car,
+        Vendor: vendor.Vendor['@Name'],
+        VendorCode: vendor.Vendor['@Code']
+      };
+    });
+    cars = cars.concat(vendorCars);
+  });
+  return cars;
+}
+
