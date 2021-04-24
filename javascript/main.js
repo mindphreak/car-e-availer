@@ -8,7 +8,7 @@ document.addEventListener('readystatechange', (event) => {
   }
 })
 
-const initializeApp = () => {
+export const initializeApp = () => {
   getCarData().then((carsData) => {
     const { VehRentalCore, VehVendorAvails } = carsData[0].VehAvailRSCore;
     const carList = generateCarList(VehVendorAvails);

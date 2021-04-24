@@ -33,11 +33,26 @@ h1 {
   }
 
   .legend-container {
-      display: flex;
-      justify-content: space-between;
+    display: flex;
+    justify-content: space-between;
     margin: 15px 100px 25px 54px;
     font-size: 0.8em;
     div {
         display: inline-block;
     }
+  }
+
+  .car-details {
+    display:none;
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+    }
+  }
+
+  footer {
+      background: black;
+      color: white;
   }

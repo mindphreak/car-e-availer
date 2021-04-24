@@ -1,4 +1,5 @@
 import { createStringBlock } from './utility/utility.js';
+import { showDetails } from './car-details.js';
 
 export const showCars = (cars) => {
     for (const car of cars) {
@@ -28,6 +29,9 @@ const createCarCard = (car) => {
   button.classList.add('btn', 'btn-dark');
   const buttonText = document.createTextNode('Show more...');
   button.appendChild(buttonText);
+  button.addEventListener('click', (event) => {
+      showDetails(car);
+  })
   card.appendChild(button);
 
 }
