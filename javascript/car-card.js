@@ -12,19 +12,21 @@ const createCarCard = (car) => {
     const container = document.getElementById('content');
     const card = document.createElement('div');
     card.classList.add('card');
-    const image = document.createElement('img');
-    image.src = car.Vehicle['PictureURL'];
-    image.classList.add('card-img-top');
-    card.appendChild(image);
-    container.appendChild(card);
-    let text = `Name: ${vehicleDetails.VehMakeModel['@Name']}`;
-  const name = createStringBlock(text);
-  card.appendChild(name);
-
-     text = `Vendor: ${car.Vendor}`;
-  const vendor = createStringBlock(text);
-  card.appendChild(vendor);
-
+    appendImage(card, car.Vehicle['PictureURL']);
+    const details = [
+      `Name: ${vehicleDetails.VehMakeModel['@Name']}`,
+      `Vendor: ${car.Vendor}`,
+      `Passengers: ${car.Vehicle['@PassengerQuantity']}`,
+      `Baggage: ${car.Vehicle['@BaggageQuantity']}`,
+      `A/C: ${car.Vehicle['@AirConditionInd']}`,
+      `Transmission Type: ${car.Vehicle['@TransmissionType']}`,
+      `Fuel Type: ${car.Vehicle['@FuelType']}`,
+      `Estimated Total Amount: ${car.TotalCharge['@EstimatedTotalAmount']} ${car.TotalCharge['@CurrencyCode']}`,
+    ];
+  
+    for (const detail of details) {
+      appendtoParent(card, detail);
+    }
   const button = document.createElement('button');
   button.classList.add('btn', 'btn-dark');
   const buttonText = document.createTextNode('Show more...');
@@ -33,5 +35,17 @@ const createCarCard = (car) => {
       showDetails(car);
   })
   card.appendChild(button);
-
+  container.appendChild(card);
 }
+
+const appendImage = (parent, source) => {
+    const image = document.createElement('img');
+    image.src = source;
+    image.classList.add('card-img-top');
+    parent.appendChild(image);
+  }
+  
+  const appendtoParent = (parent, text) => {
+    const block = createStringBlock(text);
+    parent.appendChild(block);
+  }
