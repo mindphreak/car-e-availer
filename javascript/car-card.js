@@ -2,9 +2,15 @@ import { createStringBlock } from './utility/utility.js';
 import { showDetails } from './car-details.js';
 
 export const showCars = (cars) => {
-    for (const car of cars) {
+    const orderedCars = orderCars(cars); 
+    for (const car of orderedCars) {
         createCarCard(car);
     }
+}
+
+const orderCars = (cars, order = 'ASC') => {
+    return cars.sort((a,b) => parseFloat(a.TotalCharge['@EstimatedTotalAmount']) - parseFloat(b.TotalCharge['@EstimatedTotalAmount']));
+
 }
 
 const createCarCard = (car) => {
