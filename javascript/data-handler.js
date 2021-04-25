@@ -4,9 +4,7 @@
  */
 export const getCarData = () => {
   const url = "http://www.cartrawler.com/ctabe/cars.json";
-  const encodedUrl = encodeURI(url);
-  const data = requestData(encodedUrl);
-  return data;
+  return requestData(url);
 }
 
 /**
@@ -17,8 +15,7 @@ export const getCarData = () => {
 const requestData = async (url) => {
   try {
     const response = await fetch(url);
-    const data = response.json();
-    return data;
+    return response.json();
   } catch (error) {
     console.error(error);
   }

@@ -4,7 +4,8 @@
   "description": "A rental availability listing.",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -17,6 +18,14 @@
   },
   "homepage": "https://github.com/mindphreak/car-e-availer#readme",
   "devDependencies": {
-    "eslint": "^7.24.0"
-  }
+    "eslint": "^7.24.0",
+    "parcel-bundler": "^1.12.5"
+  },
+  "browserslist": [
+    "last 3 and_chr versions",
+    "last 3 chrome versions",
+    "last 3 opera versions",
+    "last 3 ios_saf versions",
+    "last 3 safari versions"
+  ]
 }
