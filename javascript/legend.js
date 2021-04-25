@@ -1,11 +1,14 @@
 import { createStringBlock } from './utility/utility.js';
+import { createSelect } from './order-dropdown.js';
 
-export const createLegend = (details) => {
+export const createLegend = (details, selectOption) => {
   const legend = document.getElementById('legend');
-  // const header = createHeader('Legend');
-  // legend.appendChild(header);
-  const content = createContent(details);
-  legend.appendChild(content);
+  if (!legend.innerHTML) {
+    const content = createContent(details);
+    legend.appendChild(content);
+    const dropdown = createSelect(selectOption);
+    legend.appendChild(dropdown);
+  }
 }
 
 const createHeader = (string) => {

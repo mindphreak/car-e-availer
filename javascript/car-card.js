@@ -1,16 +1,20 @@
 import { createStringBlock } from './utility/utility.js';
 import { showDetails } from './car-details.js';
 
-export const showCars = (cars) => {
-    const orderedCars = orderCars(cars);
+export const showCars = (cars, order) => {
+    const container = document.getElementById('content');
+    container.innerHTML = "";
+    const orderedCars = orderCars(cars, order);
     for (const car of orderedCars) {
         createCarCard(car);
     }
 }
 
-const orderCars = (cars, order = 'ASC') => {
-    return cars.sort((a, b) => parseFloat(a.TotalCharge['@EstimatedTotalAmount']) - parseFloat(b.TotalCharge['@EstimatedTotalAmount']));
-
+const orderCars = (cars, order = 'PASC') => {
+    const orderDecider = order === 'PASC' ? 1 : -1;
+    return cars.sort((a, b) => {
+        return orderDecider * (parseFloat(a.TotalCharge['@EstimatedTotalAmount']) - parseFloat(b.TotalCharge['@EstimatedTotalAmount']));
+    });
 }
 
 const createCarCard = (car) => {

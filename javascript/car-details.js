@@ -1,12 +1,13 @@
-import { initializeApp } from './main.js';
 import { createStringBlock } from './utility/utility.js';
 
 export const toggleDetailsView = (showDetails = false) => {
   const detailsElement = document.getElementById('details');
   const cardElement = document.getElementById('content');
+  const dropdown = document.getElementById("order-select");
 
   detailsElement.style.display = showDetails ? 'block' : 'none';
   cardElement.style.display = showDetails ? 'none' : 'flex';
+  dropdown.style.display = showDetails ? 'none' : 'block';
   if (showDetails) {
     detailsElement.innerHTML = "";
   }

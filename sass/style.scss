@@ -25,11 +25,13 @@ h1 {
     min-height: 10rem;
     margin: 10px;
     
-    // line-height: 100px;
     color: #282c35;
     font-weight: bold;
     font-size: 0.6em;
     text-align: left;
+    div {
+        margin-left: 25px;
+    }
   }
 
   .legend-container {

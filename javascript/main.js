@@ -1,22 +1,19 @@
 import { getCarData, generateCarList } from './data-handler.js';
 import { createLegend } from './legend.js';
 import { showCars } from './car-card.js';
-import { createSelect } from './order-dropdown.js';
 
+const PRICE_ASCENDING = 'PASC';
 document.addEventListener('readystatechange', (event) => {
   if (event.target.readyState === 'complete') {
     initializeApp();
   }
 })
 
-export const initializeApp = () => {
+export const initializeApp = (order = PRICE_ASCENDING) => {
   getCarData().then((carsData) => {
     const { VehRentalCore, VehVendorAvails } = carsData[0].VehAvailRSCore;
     const carList = generateCarList(VehVendorAvails);
-    createLegend(VehRentalCore);
-    const dropdown  = createSelect();
-    const legend = document.getElementById('legend');
-    legend.appendChild(dropdown);
-    showCars(carList);
+    createLegend(VehRentalCore, order);
+    showCars(carList, order);
   });
 }
