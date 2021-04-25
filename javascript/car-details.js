@@ -1,5 +1,9 @@
 import { createStringBlock } from './utility/utility.js';
 
+/**
+ * Switches between all-cars-view and details-view.
+ * @param {*} showDetails 
+ */
 export const toggleDetailsView = (showDetails = false) => {
   const detailsElement = document.getElementById('details');
   const cardElement = document.getElementById('content');
@@ -13,6 +17,10 @@ export const toggleDetailsView = (showDetails = false) => {
   }
 }
 
+/**
+ * Creates the details view.
+ * @param {*} car 
+ */
 export const showDetails = (car) => {
   toggleDetailsView(true);
 
@@ -37,6 +45,11 @@ export const showDetails = (car) => {
   }
 }
 
+/**
+ * Attaches image to the parent specified.
+ * @param {*} parent 
+ * @param {*} source 
+ */
 const appendImage = (parent, source) => {
   const image = document.createElement('img');
   image.src = source;
@@ -44,11 +57,20 @@ const appendImage = (parent, source) => {
   parent.appendChild(image);
 }
 
+/**
+ * Attaches block of string to the prent specified.
+ * @param {*} parent 
+ * @param {*} text 
+ */
 const appendtoParent = (parent, text) => {
   const block = createStringBlock(text);
   parent.appendChild(block);
 }
 
+/**
+ * Creates a button.
+ * @returns button element.
+ */
 const createButton = () => {
   const button = document.createElement('button');
   button.classList.add('btn', 'btn-dark');

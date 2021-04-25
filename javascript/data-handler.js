@@ -22,9 +22,9 @@ const requestData = async (url) => {
 }
 
 /**
- * Generates
+ * Generates array of all cars with added vendor identification keys.
  * @param {*} vehVendorAvails 
- * @returns 
+ * @returns car list.
  */
 export const generateCarList = (vehVendorAvails) => {
   let cars = [];

@@ -3,6 +3,10 @@ import { createLegend } from './legend.js';
 import { showCars } from './car-card.js';
 
 const PRICE_ASCENDING = 'PASC';
+
+/**
+ * Ensures that the application content is ready to load.
+ */
 document.addEventListener('readystatechange', (event) => {
   if (event.target.readyState === 'complete') {
     initializeApp();

@@ -10,6 +10,12 @@ export const showCars = (cars, order) => {
     }
 }
 
+/**
+ * Sorts the list according to the order parameter.
+ * @param {*} cars 
+ * @param {*} order 
+ * @returns 
+ */
 const orderCars = (cars, order = 'PASC') => {
     const orderDecider = order === 'PASC' ? 1 : -1;
     return cars.sort((a, b) => {
@@ -17,6 +23,10 @@ const orderCars = (cars, order = 'PASC') => {
     });
 }
 
+/**
+ * Creates a single car card.
+ * @param {*} car 
+ */
 const createCarCard = (car) => {
     const vehicleDetails = car.Vehicle;
     const container = document.getElementById('content');
@@ -48,6 +58,11 @@ const createCarCard = (car) => {
     container.appendChild(card);
 }
 
+/**
+ * Attaches image to the parent element supplied.
+ * @param {*} parent 
+ * @param {*} source 
+ */
 const appendImage = (parent, source) => {
     const image = document.createElement('img');
     image.src = source;
@@ -55,6 +70,11 @@ const appendImage = (parent, source) => {
     parent.appendChild(image);
 }
 
+/**
+ * Attaches block to the parent specified.
+ * @param {*} parent 
+ * @param {*} text 
+ */
 const appendtoParent = (parent, text) => {
     const block = createStringBlock(text);
     parent.appendChild(block);

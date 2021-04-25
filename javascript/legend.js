@@ -11,13 +11,6 @@ export const createLegend = (details, selectOption) => {
   }
 }
 
-const createHeader = (string) => {
-  const header = document.createElement('h4');
-  const text = document.createTextNode(string);
-  header.appendChild(text);
-  return header;
-}
-
 const createContent = (details) => {
   const content = document.createElement('div');
   content.classList.add('legend-container');
@@ -32,6 +25,11 @@ const createContent = (details) => {
   return content;
 }
 
+/**
+ * Converts time into locale time format.
+ * @param {*} time 
+ * @returns 
+ */
 const getLocaleTimeString = (time) => {
   const options = {
     weekday: 'long',
